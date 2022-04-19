@@ -1,0 +1,156 @@
+@import '../../style/scss/variables/vars.scss';
+
+.button {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'Raleway', Arial, sans-serif;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s linear;
+
+  .button-spinner {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button-spinner-wrapper {
+    border-radius: 4px;
+  }
+
+  &-primary {
+    color: white;
+    background: $blueNormal;
+    border: 1px solid $blueNormal;
+
+    &:hover {
+      background: $blueBright;
+    }
+
+    &:active {
+      background: $blueDark;
+    }
+  }
+
+  &-secondary {
+    color: black;
+    background: transparent;
+    border: 1px solid $greyDark;
+
+    &:hover {
+      color: white;
+      background: $blueNormal;
+      border-color: $blueNormal;
+    }
+
+    &:active {
+      color: black;
+      background: transparent;
+      border: 1px solid $greyDark;
+    }
+  }
+
+  &-naked {
+    color: black;
+    background: white;
+    border: 1px solid white;
+
+    &:hover {
+      background: $greyNormal;
+      border-color: $greyNormal;
+    }
+
+    &-blue {
+      color: $blueDark;
+      background: transparent;
+
+      &:hover {
+        color: $blueBright;
+      }
+
+      &:active {
+        color: $blueDark;
+      }
+    }
+
+    .button-spinner {
+      border-color: red;
+    }
+  }
+
+  &-disabled {
+    color: $greyBright;
+    background: $greyDark;
+    border-color: $greyDark;
+    cursor: default;
+  }
+
+  &-gray {
+    color: black;
+    background: $greyNormal;
+    border: 1px solid $greyNormal;
+    border-radius: 6px;
+    width: 154px;
+    height: 32px;
+
+    &:hover {
+      color: white;
+      background: $blueNormal;
+      border-color: white;
+    }
+
+    .button-spinner {
+      border-color: red;
+    }
+  }
+
+  &FullWidth {
+    width: 100%;
+  }
+
+  &-no-event {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &SpinnerWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  &Spinner {
+    display: block;
+    border: 1px solid white;
+    border-top-color: transparent !important;
+    border-radius: 100%;
+    animation: spin 1s infinite linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
