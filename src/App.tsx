@@ -29,6 +29,7 @@ function App() {
   const [listUsers, setListUsers] = useState([])
   const [countUsers, setCountUsers] = useState(0)
   const [typeSort, setTypeSort] = useState('default')
+  const [isLoading, setIsLoading] = useState(false)
 
   const sortList = () => {
     if (typeSort === 'по городу') {
@@ -67,6 +68,7 @@ function App() {
   const handleTypeSort = (type: string) => setTypeSort(type)
 
   useEffect(() => {
+    setIsLoading(true)
     main
       .getUsers()
       .then((users) => {
@@ -74,13 +76,14 @@ function App() {
         setCountUsers(users.length)
       })
       .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false))
   }, [])
 
   return (
     <div className={s.app}>
       <SideBar handleTypeSort={handleTypeSort} />
       <Routes>
-        <Route path='/' element={<ListUsers listUsers={listUsers} countUsers={countUsers} />} />
+        <Route path='/' element={<ListUsers listUsers={listUsers} countUsers={countUsers} isLoading={isLoading} />} />
         <Route path='/user/:userId' element={<UserPage user={user} />} />
       </Routes>
     </div>
