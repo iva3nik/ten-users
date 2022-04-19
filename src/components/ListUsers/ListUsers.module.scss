@@ -1,0 +1,18 @@
+.users {
+  width: 100%;
+  padding: 19px 62px 0 34px;
+  box-sizing: border-box;
+
+  &__title {
+    font-family: 'Roboto', serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+  }
+
+  &__user {
+    margin-top: 15px;
+  }
+}

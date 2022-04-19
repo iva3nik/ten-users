@@ -2,11 +2,9 @@ import React from 'react'
 
 import { Button } from '../Button/Button'
 
-import s from './SideBar.module.scss'
+import { TSort } from '../../const/type'
 
-export interface TSort {
-  title: string
-}
+import s from './SideBar.module.scss'
 
 const buttonsSort: Array<TSort> = [{ title: 'по городу' }, { title: 'по компании' }]
 

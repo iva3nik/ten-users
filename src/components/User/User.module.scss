@@ -1,0 +1,45 @@
+.user {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    color: black;
+    margin-bottom: 8px;
+    font-family: 'Roboto', serif;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    font-style: normal;
+
+    span {
+      color: #a3a3a3;
+      margin-right: 7px;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__button {
+    align-self: end;
+    border: none;
+    background-color: transparent;
+    color: #4b51ef;
+    font-family: 'Roboto', serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+    font-style: normal;
+    transition: 0.3s linear;
+
+    &:hover {
+      color: #1920e6;
+    }
+  }
+}
