@@ -15,4 +15,16 @@
   &__user {
     margin-top: 15px;
   }
+
+  &__count {
+    font-family: 'Roboto', serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    width: 100%;
+    text-align: end;
+    margin-top: 10px;
+  }
 }

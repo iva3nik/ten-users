@@ -6,6 +6,10 @@
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
+  transition: 0.3s linear;
+  &:hover {
+    box-shadow: 0 0 10px -5px rgb(43, 53, 234);
+  }
 
   &__text {
     color: black;

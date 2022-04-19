@@ -2,17 +2,26 @@ import React from 'react'
 
 import User from '../User/User'
 
-import s from './ListUsers.module.scss'
-
 import { TUser } from '../../const/type'
 
-const ListUsers: React.FC = () => {
+import s from './ListUsers.module.scss'
+
+interface TProps {
+  listUsers: Array<TUser>
+  countUsers: number
+}
+
+const ListUsers = ({ listUsers, countUsers }: TProps): React.ReactElement => {
   return (
     <main className={s.users}>
       <h2 className={s.users__title}>Список пользователей</h2>
-      <div className={s.users__user}>
-        <User />
-      </div>
+      {listUsers &&
+        listUsers.map((user: TUser) => (
+          <div className={s.users__user} key={user.id}>
+            <User item={user} />
+          </div>
+        ))}
+      <p className={s.users__count}>Найдено {countUsers} пользователей</p>
     </main>
   )
 }
