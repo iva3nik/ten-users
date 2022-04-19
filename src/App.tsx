@@ -1,8 +1,15 @@
 import React from 'react'
-import './App.module.scss'
+
+import SideBar from './components/SideBar/SideBar'
+
+import s from './App.module.scss'
 
 function App() {
-  return <div className='App'>New</div>
+  return (
+    <div className={s.app}>
+      <SideBar />
+    </div>
+  )
 }
 
 export default App
