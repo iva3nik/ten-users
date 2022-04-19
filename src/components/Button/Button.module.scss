@@ -18,4 +18,12 @@
   &:hover {
     background: #171ee5;
   }
+
+  &-disabled {
+    background: #afafaf;
+    cursor: default;
+    &:hover {
+      background: #afafaf;
+    }
+  }
 }

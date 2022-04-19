@@ -1,0 +1,21 @@
+.user {
+  width: 100%;
+  padding: 13px 41px 0 36px;
+  box-sizing: border-box;
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Roboto', serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+  }
+}

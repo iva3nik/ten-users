@@ -7,6 +7,7 @@ export interface ButtonProps {
   buttonType?: 'button' | 'submit'
   onClick?: () => void
   customClassName?: string
+  disabled?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -14,9 +15,10 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   buttonType = 'button',
   customClassName,
+  disabled = false,
 }: ButtonProps): ReactElement => {
   const cx = classNames.bind(s)
-  const classes = cx(customClassName, 'button')
+  const classes = cx(customClassName, 'button', { 'button-disabled': disabled })
 
   const clickHandler = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     if (onClick) {
@@ -27,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button type={buttonType} className={classes} onClick={clickHandler}>
+    <button type={buttonType} className={classes} onClick={clickHandler} disabled={disabled}>
       {children}
     </button>
   )

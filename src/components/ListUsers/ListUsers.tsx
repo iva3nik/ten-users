@@ -1,6 +1,6 @@
 import React from 'react'
 
-import User from '../User/User'
+import UserCard from '../UserCard/UserCard'
 
 import { TUser } from '../../const/type'
 
@@ -18,7 +18,7 @@ const ListUsers = ({ listUsers, countUsers }: TProps): React.ReactElement => {
       {listUsers &&
         listUsers.map((user: TUser) => (
           <div className={s.users__user} key={user.id}>
-            <User item={user} />
+            <UserCard item={user} />
           </div>
         ))}
       <p className={s.users__count}>Найдено {countUsers} пользователей</p>

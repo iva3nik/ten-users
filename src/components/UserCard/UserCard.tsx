@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './User.module.scss'
+import s from './UserCard.module.scss'
 
 import { TUser } from '../../const/type'
 
@@ -8,7 +8,7 @@ interface TItem {
   item: TUser
 }
 
-const User = ({ item }: TItem) => {
+const UserCard = ({ item }: TItem) => {
   return (
     <section className={s.user}>
       <div className={s.user__info}>
@@ -32,4 +32,4 @@ const User = ({ item }: TItem) => {
   )
 }
 
-export default User
+export default UserCard
