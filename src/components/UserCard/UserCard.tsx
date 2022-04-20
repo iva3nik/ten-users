@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import s from './UserCard.module.scss'
 
@@ -6,9 +7,10 @@ import { TUser } from '../../const/type'
 
 interface TItem {
   item: TUser
+  handleSetUser: (user: TUser) => void
 }
 
-const UserCard = ({ item }: TItem) => {
+const UserCard = ({ item, handleSetUser }: TItem) => {
   return (
     <section className={s.user}>
       <div className={s.user__info}>
@@ -25,9 +27,9 @@ const UserCard = ({ item }: TItem) => {
           {item.company.name}
         </p>
       </div>
-      <button className={s.user__button} type='button'>
+      <Link to={`/user/${item.id}`} className={s.user__button} type='button' onClick={() => handleSetUser(item)}>
         Подробнее
-      </button>
+      </Link>
     </section>
   )
 }
