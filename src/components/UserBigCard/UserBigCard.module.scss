@@ -42,3 +42,12 @@
     margin-top: 15px;
   }
 }
+
+.link {
+  color: black;
+  transition: 0.3s linear;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

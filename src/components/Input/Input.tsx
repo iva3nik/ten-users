@@ -8,7 +8,7 @@ interface TProps {
 }
 
 const Input = ({ value, type }: TProps) => {
-  return <input className={s.input} value={value} type={type} />
+  return <input className={s.input} value={value} type={type} readOnly />
 }
 
 export default Input

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 import SideBar from './components/SideBar/SideBar'
 import ListUsers from './components/ListUsers/ListUsers'
 import UserPage from './components/UserPage/UserPage'
@@ -10,27 +10,13 @@ import * as main from './utils/MainApi'
 import s from './App.module.scss'
 import { TUser } from './const/type'
 
-// const user = {
-//   address: {
-//     city: 'Obninsk',
-//     street: 'Lenina',
-//     zipcode: '233040',
-//   },
-//   company: { name: 'Kokos' },
-//   email: 'i3n@ya.ru',
-//   id: 1,
-//   name: 'Ivan Nikitin',
-//   phone: '+7999999999',
-//   username: 'iva3nik',
-//   website: 'yandex.ru',
-// }
-
 function App() {
   const [listUsers, setListUsers] = useState([])
   const [countUsers, setCountUsers] = useState(0)
   const [typeSort, setTypeSort] = useState('default')
   const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState<null | TUser>(null)
+  const navigate = useNavigate()
 
   const sortList = () => {
     if (typeSort === 'по городу') {
@@ -71,6 +57,7 @@ function App() {
   const handleTypeSort = (type: string) => setTypeSort(type)
 
   useEffect(() => {
+    navigate('/')
     setIsLoading(true)
     main
       .getUsers()
