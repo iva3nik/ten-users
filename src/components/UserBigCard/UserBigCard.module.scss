@@ -10,12 +10,14 @@
 
   &__text {
     color: black;
-    margin: 10px 0 3px 0;
+    margin: 10px 0 0 0;
     font-family: 'Roboto', serif;
     font-size: 8px;
     line-height: 9px;
     font-weight: normal;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
 
     &:first-of-type {
       margin-top: 0px;
@@ -23,6 +25,7 @@
   }
 
   &__textarea {
+    margin-top: 3px;
     width: 420px;
     box-sizing: border-box;
     min-height: 55px;
@@ -35,11 +38,42 @@
     line-height: 12px;
     font-weight: normal;
     font-style: normal;
+
+    &:disabled {
+      background-color: white;
+    }
   }
 
   &__button {
     margin-left: auto;
     margin-top: 15px;
+  }
+
+  &__input {
+    margin: 3px 0 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    width: 211px;
+    box-sizing: border-box;
+    padding: 5px 0 5px 10px;
+    color: black;
+    font-family: 'Roboto', serif;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: normal;
+    font-style: normal;
+
+    &_readonly {
+      color: #00000030;
+    }
+
+    &:invalid {
+      border-color: red;
+    }
+
+    &:disabled {
+      background-color: white;
+    }
   }
 }
 

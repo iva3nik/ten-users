@@ -11,7 +11,7 @@ import s from './App.module.scss'
 import { TUser } from './const/type'
 
 function App() {
-  const [listUsers, setListUsers] = useState([])
+  const [listUsers, setListUsers] = useState<Array<TUser>>([])
   const [countUsers, setCountUsers] = useState(0)
   const [typeSort, setTypeSort] = useState('default')
   const [isLoading, setIsLoading] = useState(false)
@@ -48,7 +48,16 @@ function App() {
     }
   }
 
-  const handleSetUser = (user: TUser) => setUser(user)
+  const handleSetUser = (user: TUser) => {
+    setUser(user)
+  }
+
+  useEffect(() => {
+    if (user) {
+      const newArray = listUsers.map((i: TUser) => (i.id === user.id ? user : i))
+      setListUsers(newArray)
+    }
+  }, [user])
 
   useEffect(() => {
     sortList()
@@ -84,7 +93,7 @@ function App() {
             />
           }
         />
-        {user && <Route path={`/user/:${user?.id}`} element={<UserPage user={user} />} />}
+        {user && <Route path={`/user/:${user?.id}`} element={<UserPage user={user} handleSetUser={handleSetUser} />} />}
       </Routes>
     </div>
   )

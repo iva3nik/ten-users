@@ -21,4 +21,5 @@ export interface TUser {
   phone: string
   username: string
   website: string
+  comment?: string
 }
